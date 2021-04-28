@@ -1,0 +1,31 @@
+{
+    "blogs":[
+        {
+         "title":"Sports",   
+         "body":"hello this is first article",
+         "author":"Mina", 
+         "id":1
+        },
+        {
+            "title":"Economy",   
+            "body":"hello this is second article", 
+            "author":"Mario", 
+            "id":2
+        },
+        {
+            "title":"Politics",  
+            "body":"hello this is third article",  
+            "author":"Ahmed", 
+            "id":3
+        },
+        {
+            "title":"Journalism",
+            "body":"hello this is fourth article", 
+            "author":"Mina", 
+            "id":4
+        } 
+    ]
+
+}
+
+   

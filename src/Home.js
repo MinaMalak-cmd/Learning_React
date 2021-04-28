@@ -1,38 +1,38 @@
-import { useState } from "react"
-
+import BlogList from "./BlogList"
+import useFetch from "./useFetch"
+import First from "./First";
 const Home = () => {
-    // let f = 'mina';
-    // const [name,setName] = useState(f)
-    // const [age,setAge] = useState(34) 
-    let x = 'black';
-    let randomColor='#' + ((1<<24)*Math.random() | 0).toString(16);
-    const [col,setCol] = useState(randomColor)
-    const handleClick = (e) =>{
-        // console.log("hii,Mina" ,e.target)
-        // if(name=='mina'){
-        //     setName('Ahmed')
-        //     setAge(30)
-        // }
-        // else{
-        //     setName('mina')
-        //     setAge(34) 
-        // }
-        setCol('#' + ((1<<24)*Math.random() | 0).toString(16));
-        console.log(x,randomColor)
-    }
-    const handleClickVar = (name,e) =>{
-        console.log("hii",name,e)
-    }
+   
+    const {data:blogs, isError, isLoading} = useFetch('http://localhost:8000/blogs',"please check your network connection") 
+    // const{data:blogsFirst, isLoading:loadingFirst, isError:errorFirst}  = useFetch( 'http://localhost:8001/blogs','error from second comp')
+    //     [
+    //     {title:"Sports",body:"hello this is first article", author:"Mina", id:1},
+    //     {title:"Economy",body:"hello this is second article", author:"Mario", id:2},
+    //     {title:"Politics",body:"hello this is third article", author:"Ahmed", id:3},
+    //     {title:"Journalism",body:"hello this is fourth article", author:"Mina", id:4}      
+     
+    // ])
+    // const dates =[
+    //     {date:"2/4/2010"},
+    //     {date:"4/4/2020"},
+    //     {date:"5/4/2030"}
+    // ]
+    // const handleDelete = (id) => {
+    //     const newBlogs = blogs.filter(blog => blog.id!==id);
+    //     setBlog(newBlogs)
+    // }
+   
     return ( 
-        <div className="home" style={{
-            backgroundColor : col
-        }}>
-            Home Content
-            <button onClick={handleClick}>Change Color</button>
-            {/* <p>my name is {name} and i'm {age} years old</p> */}
-            <p>my name is Mina and i'm 24 years old</p>
-            {/* <button onClick={(e)=>handleClickVar('ashraf',e)}>Click To get data</button> */}
-
+        <div className="home" >
+           {/* <BlogList blogs_content={blogs} title={dates}/> */}
+           {isLoading && <div>Loading....</div>}
+           {isError && <div>{isError}</div>}
+           {blogs&& !isError && <BlogList blogs_content={blogs} title='All Blogs' />}
+           {/* <BlogList blogs_content={blogs.filter(blog => blog.author==="Mina")} title='Mina Blogs' handleDelete={handleDelete} /> */}
+           {/* {loadingFirst && <div>Loading....</div>}
+           {errorFirst && <div>{errorFirst}</div>} */}
+           {/* {blogsFirst&& !errorFirst && <First blogsFirst={blogsFirst} title='First Blogs' />} */}
+           {<First />}
         </div>
      );
 }
