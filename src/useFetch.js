@@ -3,7 +3,7 @@ const useFetch =(url,error) =>{
     const [data,setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setError] = useState(null);
-    useEffect(()=>{
+    useEffect((error)=>{
         const abortCont = new AbortController();
         setTimeout(() => {
             fetch(url,{ signal :abortCont.signal})
