@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <div className="content" style={{backgroundColor:col}}> */}
       <div className="content">
+       Hiii
        <Home />
       </div>
     </div>
