@@ -1,1 +1,2 @@
-Simple JS implemenetation to know how Redux works
+# Redux
+More hands-on practice on Redux
