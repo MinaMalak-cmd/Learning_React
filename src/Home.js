@@ -1,22 +1,10 @@
 import { useState } from "react"
 
 const Home = () => {
-    // let f = 'mina';
-    // const [name,setName] = useState(f)
-    // const [age,setAge] = useState(34) 
     let x = 'black';
     let randomColor='#' + ((1<<24)*Math.random() | 0).toString(16);
     const [col,setCol] = useState(randomColor)
     const handleClick = (e) =>{
-        // console.log("hii,Mina" ,e.target)
-        // if(name=='mina'){
-        //     setName('Ahmed')
-        //     setAge(30)
-        // }
-        // else{
-        //     setName('mina')
-        //     setAge(34) 
-        // }
         setCol('#' + ((1<<24)*Math.random() | 0).toString(16));
         console.log(x,randomColor)
     }
