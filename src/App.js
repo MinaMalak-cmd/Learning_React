@@ -14,7 +14,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/create">
-              <First />
+              <First />ghhh
             </Route>
             <Route path="/blogDetail/:id">
               <BlogDetail />
