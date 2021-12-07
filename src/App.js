@@ -6,7 +6,6 @@ function App() {
       <Navbar />
       <div className="content">
         try Ci/CD1
-        fgg
        <Home />
       </div>
     </div>
