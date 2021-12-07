@@ -5,7 +5,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="content">
-        try Ci/CD
+        try Ci/CD2
        <Home />
       </div>
     </div>
